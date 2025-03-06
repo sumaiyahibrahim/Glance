@@ -10,7 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
         <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <script src="chatbot.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="styles/chatbot.css">
     </head>
     <body>
         <div class ="header">
@@ -67,8 +69,8 @@
             <h2 class="title" >Featured Products</h2>
                 <div class="row">
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-11.jpg"></a>
-                        <a href="products-details.html"><h4>Downshifter Sports Shoes</h4></a>
+                        <img src="images/product-11.jpg" onclick="addToCart('p1', 'Downshifter Sports Shoes', 4150, 'images/product-11.jpg')">
+                        <h4>Downshifter Sports Shoes</h4>
                         <div class="rating">
                             <!--(before this added awesome4 cdn font link to the head)added a cdn link by searching font awesome4 icon and from the site  search the star entering the first option and getting a link of this fa-star*-->
                             <i class="fa fa-star" ></i>
@@ -80,7 +82,7 @@
                         <p>₹4,150</p>
                     </div>
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-2.jpg"></a>
+                        <img src="images/product-2.jpg" onclick="addToCart('p2', 'Lace-Up Running Shoes', 2905, 'images/product-2.jpg')">
                         <h4>Lace-Up Running Shoes</h4>
                         <div class="rating">
                             <i class="fa fa-star" ></i>
@@ -92,7 +94,7 @@
                         <p>₹2,905</p>
                     </div>
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
+                        <img src="images/product-3.jpg" onclick="addToCart('p3', 'Lace Fastening Shoes', 1245, 'images/product-3.jpg')">
                         <h4>Lace Fastening Shoes</h4>
                         <div class="rating">
                             <i class="fa fa-star" ></i>
@@ -104,7 +106,7 @@
                         <p>₹1,245</p>
                     </div>
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-10.jpg"></a>
+                        <img src="images/product-10.jpg" onclick="addToCart('p4', 'Flat Lace-Fastening Shoes', 3984, 'images/product-10.jpg')">
                         <h4>Flat Lace-Fastening Shoes</h4>
                         <div class="rating">
                             <i class="fa fa-star" ></i>
@@ -158,7 +160,7 @@
                         <p>₹747</p>
                     </div>
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-2.jpg"></a>
+                        <img src="images/product-2.jpg" onclick="addToCart('p2', 'Lace-Up Running Shoes', 2905, 'images/product-2.jpg')">
                         <h4>Lace-Up Running Shoes</h4>
                         <div class="rating">
                             <i class="fa fa-star" ></i>
@@ -186,7 +188,7 @@
                         <p>₹830</p>
                     </div>
                     <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-10.jpg"></a>
+                        <img src="images/product-10.jpg" onclick="addToCart('p4', 'Flat Lace-Fastening Shoes', 3984, 'images/product-10.jpg')">
                         <h4>Flat Lace-Fastening Shoes</h4>
                         <div class="rating">
                             <i class="fa fa-star" ></i>
@@ -347,6 +349,16 @@
         </div>
     </div>
         
+        <div id="chatbot" class="chatbot-container">
+            <div id="chatbot-header" class="chatbot-header">
+                <img src="chatbot-logo.png" alt="Chatbot Logo" class="chatbot-logo">
+                Chat with us!
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type a message...">
+            <button id="send-chatbot" class="chatbot-send">Send</button>
+            <button id="close-chatbot" class="chatbot-close">Close</button>
+        </div>
         
         <!-----------------------------------js for toggle menu----------------------------------------------->
         <script>
@@ -361,6 +373,38 @@
                     MenuItems.style.maxHeight="0px";
                 }
             }
+
+            // Chatbot functionality
+            document.getElementById('send-chatbot').addEventListener('click', function() {
+                var input = document.getElementById('chatbot-input').value;
+                var messages = document.getElementById('chatbot-messages');
+                var userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.textContent = input;
+                messages.appendChild(userMessage);
+                document.getElementById('chatbot-input').value = '';
+
+                // Send user message to chatbot API
+                axios.post('/chatbot', { message: input })
+                    .then(function(response) {
+                        var botMessage = document.createElement('div');
+                        botMessage.className = 'bot-message';
+                        botMessage.textContent = response.data.reply;
+                        messages.appendChild(botMessage);
+                    })
+                    .catch(function(error) {
+                        var botMessage = document.createElement('div');
+                        botMessage.className = 'bot-message';
+                        botMessage.textContent = 'Sorry, I could not understand that.';
+                        messages.appendChild(botMessage);
+                    });
+            });
+
+            document.getElementById('close-chatbot').addEventListener('click', function() {
+                document.querySelector('.chatbot-container').style.display = 'none';
+            });
         </script>
+        <script src="script.js"></script>
+        <script src="scripts/chatbot.js"></script>
     </body>
 </html>

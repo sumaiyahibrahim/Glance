@@ -36,12 +36,10 @@
         </div>
     <!--</div>-->
     
-        
-        <!------------------------------ Products------------------------------>
         <div class="small-container">
             <div class="row row-2">
                 <h2>All Products</h2>
-                <select>
+                <select onchange="filterProducts()">
                     <option>Default sorting</option>
                     <option>Short by price</option>
                     <option>Short by popularity</option>
@@ -50,223 +48,57 @@
                 </select>
             </div>
             
-            
-            <!--<h2 class="title" >Featured Products</h2>-->
             <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-11.jpg"></a>
-                        <a href="products-details.html"><h4>Downshifter Sports Shoes</h4></a>
-                        <div class="rating">
-                            
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹3,750.00</p>
+                <div class="col-4">
+                    <img src="images/product-11.jpg" onclick="addToCart('p1', 'Downshifter Sports Shoes', 3750, 'images/product-11.jpg')">
+                    <h4>Downshifter Sports Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
                     </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-2.jpg"></a>
-                        <h4>Lace-Up Running Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>₹2,625.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>Lace Fastening Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹1,125.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-10.jpg"></a>
-                        <h4>Flat Lace-Fastening Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹3,600.00</p>
-                    </div>  
+                    <p>₹3,750.00</p>
                 </div>
-            
-            <!-------------- new row----------------->
-            
-            <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-5.jpg"></a>
-                        <h4>Flat Heel gray hoes</h4>
-                        <div class="rating">
-                            
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹3,750.00</p>
+                <div class="col-4">
+                    <img src="images/product-2.jpg" onclick="addToCart('p2', 'Lace-Up Running Shoes', 2625, 'images/product-2.jpg')">
+                    <h4>Lace-Up Running Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
                     </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-3.jpg"></a>
-                        <h4>Lace-Fastening black Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>₹1,575.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-7.jpg"></a>
-                        <h4>HRX Men's cotton socks</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹675.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-2.jpg"></a>
-                        <h4>Lace-Up Running Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹2,625.00</p>
-                    </div>  
+                    <p>₹2,625.00</p>
                 </div>
-            <!--new row for the latest product-->
-                <div class="row">
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-7.jpg"></a>
-                        <h4>HRX cotton socks</h4>
-                        <div class="rating">
-                            
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹1,575.00</p>
+                <div class="col-4">
+                    <img src="images/product-3.jpg" onclick="addToCart('p3', 'Lace Fastening Shoes', 1125, 'images/product-3.jpg')">
+                    <h4>Lace Fastening Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
                     </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-10.jpg"></a>
-                        <h4>Flat Lace-Fastening Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-half-o" ></i>
-                        </div>
-                        <p>₹3,600.00</p>
+                    <p>₹1,125.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/product-10.jpg" onclick="addToCart('p4', 'Flat Lace-Fastening Shoes', 3750, 'images/product-10.jpg')">
+                    <h4>Flat Lace-Fastening Shoes</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
                     </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-11.jpg"></a>
-                        <h4>Loafers Men (Gray)</h4>
-                        <div class="rating">
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹1,575.00</p>
-                    </div>
-                    <div class="col-4">
-                        <a href="products-details.html"><img src="images/product-12.jpg"></a>
-                        <h4>Lace-Fastening white Shoes</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <p>₹750.00</p>
-                    </div>  
+                    <p>₹3,750.00</p>
                 </div>
-            
-            <div class="page-btn">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>&#8594;</span>
-            </div>
-            
-        </div>
-        
-        
-        <!----------------------------------footer------------------------------------->
-        <div class ="footer">
-        <div class="container">
-            
-            <div class="row">
-                <div class="footer-col-2">
-                    <img src="images/logo.png">
-                    <p>Our Purpose Is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.</p>
-                </div>
-                <div class="footer-col-3">
-                    <h3>Useful Links</h3>
-                   <ul>
-                       <li>Coupons</li>
-                       <li>Blog Post</li>
-                       <li>Return Policy</li>
-                       <li>Join Affiliate</li>
-                    </ul>
-                </div>
-                <div class="footer-col-4">
-                    <h3>Follow us</h3>
-                   <ul>
-                       <li>Facebook</li>
-                       <li>Twitter</li>
-                       <li>Instagram</li>
-                       <li>Youtube</li>
-                    </ul>
-                </div>
-                
             </div>
         </div>
-    </div>
-        
-        
-        <!-----------------------------------js for toggle menu----------------------------------------------->
-        <script>
-            var menuItems=document.getElementById("MenuItems");
-            
-            MenuItems.style.maxHeight="0px";
-            function menutoggle(){
-                if(MenuItems.style.maxHeight == "0px"){
-                    MenuItems.style.maxHeight="200px";
-                }
-                else{
-                    MenuItems.style.maxHeight="0px";
-                }
-            }
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>

@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
         <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <script src="script.js"></script>
     </head>
     <body>
         <!--<div class ="header">-->
@@ -33,6 +33,41 @@
                 <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" >
             </div>
            
+        </div>
+
+        <!---------------------- Cart items details ------------------------>
+        <div class="small-container cart-page">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="product-info">
+                                <img src="path/to/image.jpg" alt="Red Printed T-Shirt">
+                                <div>
+                                    <p>Red Printed T-Shirt</p>
+                                    <p class="price">₹3,750.00</p>
+                                    <a href="#" class="remove">Remove</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" min="0" value="0"></td>
+                        <td class="item-subtotal">₹0.00</td>
+                    </tr>
+                    <!-- Repeat for other products -->
+                </tbody>
+            </table>
+            <div class="totals">
+                <p>Subtotal: <span id="subtotal">₹0.00</span></p>
+                <p>Tax: <span id="tax">₹0.00</span></p>
+                <p>Total: <span id="total">₹0.00</span></p>
+            </div>
         </div>
     <!--</div>-->
     

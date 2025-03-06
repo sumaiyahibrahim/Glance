@@ -1,0 +1,6 @@
+Flask
+nltk
+tensorflow
+openai
+twilio
+scikit-learn
