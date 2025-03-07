@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     closeChatbotButton.addEventListener('click', function () {
-        chatbotContainer.style.display = 'none';
+        chatbotContainer.classList.add('hidden');
     });
 });
 

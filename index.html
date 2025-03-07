@@ -13,6 +13,89 @@
         <script src="chatbot.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="styles/chatbot.css">
+        <style>
+            /* Enhanced Chatbot UI styles */
+            .chatbot-container {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+                background-color: #007bff;
+                border-radius: 50%;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: width 0.3s, height 0.3s;
+            }
+            .chatbot-container:hover {
+                width: 350px;
+                height: 500px;
+                border-radius: 10px;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .chatbot-header {
+                background-color: #007bff;
+                color: #fff;
+                padding: 15px;
+                text-align: center;
+                font-weight: bold;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+            .chatbot-header img {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+            }
+            .chatbot-messages {
+                flex: 1;
+                padding: 10px;
+                overflow-y: auto;
+                background-color: #fff;
+                width: 100%;
+            }
+            .chatbot-input {
+                display: flex;
+                border-top: 1px solid #ccc;
+                width: 100%;
+            }
+            .chatbot-input input {
+                flex: 1;
+                padding: 10px;
+                border: none;
+                outline: none;
+                font-size: 14px;
+            }
+            .chatbot-input button {
+                padding: 10px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+            }
+            .user-message, .bot-message {
+                margin: 5px 0;
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .user-message {
+                background-color: #007bff;
+                color: #fff;
+                align-self: flex-end;
+            }
+            .bot-message {
+                background-color: #e9e9e9;
+                color: #333;
+                align-self: flex-start;
+            }
+        </style>
     </head>
     <body>
         <div class ="header">
@@ -31,7 +114,6 @@
 
                     </ul>
                 </nav>
-                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
                 <img src="images/menu.png" class="menu-icon" onClick="menutoggle()" >
             </div>
             <div class="row">
@@ -243,79 +325,6 @@
             </div>
         </div>
         
-        
-        
-        <!------------------------------Testimonial---------------------------------->
-        <div class="testimonial">
-            <div class="small-container">
-                <div class="row">
-                    <div class="col-3">
-                        <i class="fa fa-quote-left" ></i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                        <div class="rating"> 
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <img src="images/user-1.png">
-                        <h3>Sean Parkar</h3>
-                    </div>
-                    <div class="col-3">
-                        <i class="fa fa-quote-left" ></i>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-                        <div class="rating">
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <img src="images/user-2.png">
-                        <h3>Mike Smith</h3>
-                    </div>
-                    <div class="col-3">
-                        <i class="fa fa-quote-left" ></i>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-                        <div class="rating"> 
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star" ></i>
-                            <i class="fa fa-star-o" ></i>
-                        </div>
-                        <img src="images/user-3.png">
-                        <h3>Mabel Joe</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!----------------------------------Brands------------------------------------>
-        <div class="brands">
-            <div class="small-container">
-                <div class="row">
-                    <div class="col-5">
-                        <img src="images/logo-godrej.png" alt="">
-                    </div>
-                    <div class="col-5">
-                        <img src="images/logo-oppo.png" alt="">
-                    </div>
-                    <div class="col-5">
-                        <img src="images/logo-coca-cola.png" alt="">
-                    </div>
-                    <div class="col-5">
-                        <img src="images/logo-paypal.png" alt="">
-                    </div>
-                    <div class="col-5">
-                        <img src="images/logo-philips.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
         <!----------------------------------footer------------------------------------->
         <div class ="footer">
         <div class="container">
@@ -353,11 +362,13 @@
             <div id="chatbot-header" class="chatbot-header">
                 <img src="chatbot-logo.png" alt="Chatbot Logo" class="chatbot-logo">
                 Chat with us!
+                <button id="close-chatbot" class="chatbot-close">X</button>
             </div>
             <div id="chatbot-messages" class="chatbot-messages"></div>
-            <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type a message...">
-            <button id="send-chatbot" class="chatbot-send">Send</button>
-            <button id="close-chatbot" class="chatbot-close">Close</button>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input" placeholder="Type a message...">
+                <button id="send-chatbot">Send</button>
+            </div>
         </div>
         
         <!-----------------------------------js for toggle menu----------------------------------------------->
@@ -374,6 +385,17 @@
                 }
             }
 
+            // Greet the user when the chatbot is opened
+            document.querySelector('.chatbot-container').addEventListener('mouseover', function() {
+                var messages = document.getElementById('chatbot-messages');
+                if (messages.childElementCount === 0) {
+                    var greetingMessage = document.createElement('div');
+                    greetingMessage.className = 'bot-message';
+                    greetingMessage.textContent = 'Hello! How can I assist you today?';
+                    messages.appendChild(greetingMessage);
+                }
+            });
+
             // Chatbot functionality
             document.getElementById('send-chatbot').addEventListener('click', function() {
                 var input = document.getElementById('chatbot-input').value;
@@ -384,7 +406,7 @@
                 messages.appendChild(userMessage);
                 document.getElementById('chatbot-input').value = '';
 
-                // Send user message to chatbot API
+                // Send user message to Flask backend
                 axios.post('/chatbot', { message: input })
                     .then(function(response) {
                         var botMessage = document.createElement('div');
@@ -403,6 +425,33 @@
             document.getElementById('close-chatbot').addEventListener('click', function() {
                 document.querySelector('.chatbot-container').style.display = 'none';
             });
+
+            function generateResponse(input) {
+                // Predefined responses for common questions
+                if (input.toLowerCase().includes('price')) {
+                    return 'The price of our products ranges from ₹1,245 to ₹4,150.';
+                } else if (input.toLowerCase().includes('shipping')) {
+                    return 'We offer free shipping on orders over ₹2,000.';
+                } else if (input.toLowerCase().includes('return policy')) {
+                    return 'You can return any product within 30 days of purchase.';
+                } else if (input.toLowerCase().includes('contact')) {
+                    return 'You can contact us at support@glance.com or call us at 1800-123-456.';
+                } else if (input.toLowerCase().includes('discount')) {
+                    return 'We have seasonal discounts. Please check our homepage for current offers.';
+                } else if (input.toLowerCase().includes('store hours')) {
+                    return 'Our store is open from 9 AM to 9 PM, Monday to Saturday.';
+                } else if (input.toLowerCase().includes('location')) {
+                    return 'We are located at 123 Main Street, Anytown, USA.';
+                } else if (input.toLowerCase().includes('payment methods')) {
+                    return 'We accept credit cards, debit cards, and PayPal.';
+                } else if (input.toLowerCase().includes('warranty')) {
+                    return 'Our products come with a 1-year warranty.';
+                } else if (input.toLowerCase().includes('support')) {
+                    return 'You can reach our support team at support@glance.com.';
+                } else {
+                    return 'Sorry, I could not understand that. Please ask about our products, prices, shipping, return policy, contact information, discounts, store hours, location, payment methods, warranty, or support.';
+                }
+            }
         </script>
         <script src="script.js"></script>
         <script src="scripts/chatbot.js"></script>
