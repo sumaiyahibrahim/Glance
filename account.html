@@ -10,7 +10,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
         <!--added a cdn link by searching font awesome4 cdn and getting this link from https://www.bootstrapcdn.com/fontawesome/ this url*/-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <link rel="stylesheet" href="chatbot.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="chatbot.js" defer></script>
     </head>
     <body>
         <!--<div class ="header">-->
@@ -72,6 +74,18 @@
             </div>
         </div>
         
+        <div id="chatbot" class="chatbot-container">
+            <div id="chatbot-header" class="chatbot-header">
+                <img src="chatbot-logo.png" alt="Chatbot Logo" class="chatbot-logo">
+                <span>Chat with us!</span>
+                <button id="close-chatbot" class="chatbot-close">&times;</button>
+            </div>
+            <div id="chatbot-messages" class="chatbot-messages"></div>
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Type a message...">
+                <button id="send-chatbot" class="chatbot-send">Send</button>
+            </div>
+        </div>
        
         <!----------------------------------footer------------------------------------->
         <div class ="footer">
@@ -139,6 +153,6 @@
                 Indicator.style.transform="translateX(0px)";
             }
         </script>
-
+        <script src="script.js"></script>
     </body>
 </html>
